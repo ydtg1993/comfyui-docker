@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  comfyui:
+    build: .
+    image: comfyui:latest
+    container_name: comfyui
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
+      - CHECKPOINT_URL=${CHECKPOINT_URL:-}   # 可选，自动下载模型
+    ports:
+      - "8188:8188"
+    volumes:
+      # 模型目录 - 宿主机路径可按需修改
+      - ./models/checkpoints:/app/comfyui/models/checkpoints
+      - ./models/vae:/app/comfyui/models/vae
+      - ./models/loras:/app/comfyui/models/loras
+      - ./models/controlnet:/app/comfyui/models/controlnet
+      - ./models/clip:/app/comfyui/models/clip
+      - ./models/embeddings:/app/comfyui/models/embeddings
+      - ./models/upscale_models:/app/comfyui/models/upscale_models
+      - ./models/IndexTTS-2:/app/comfyui/models/IndexTTS-2
+      # 输出目录
+      - ./output:/app/comfyui/output
+      # 可选：自定义节点持久化（如果希望安装的节点不丢失）
+      - ./custom_nodes:/app/comfyui/custom_nodes
+    restart: unless-stopped
+    shm_size: '16gb'     # 共享内存，跑大模型时需要
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]

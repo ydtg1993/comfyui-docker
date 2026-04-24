@@ -1,0 +1,903 @@
+{
+  "id": "d24d0f3f-b304-405e-b7c4-0b0abfa1c33b",
+  "revision": 0,
+  "last_node_id": 222,
+  "last_link_id": 321,
+  "nodes": [
+    {
+      "id": 168,
+      "type": "LoadAudio",
+      "pos": [
+        101.12191983285402,
+        2319.1599895751633
+      ],
+      "size": [
+        324,
+        211.328125
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": [
+            304,
+            307,
+            311,
+            313
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.57",
+        "Node name for S&R": "LoadAudio"
+      },
+      "widgets_values": [
+        "volume_1.3.mp3",
+        null,
+        null
+      ]
+    },
+    {
+      "id": 186,
+      "type": "Note",
+      "pos": [
+        114.140950636919,
+        2598.590681884122
+      ],
+      "size": [
+        332.78125,
+        240.46875
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "Index TTS 2 - Base\nIndex TTS 2 - Emotion Audio\nIndex TTS 2 - Emotion Vector\nIndex TTS 2 - Emotion Text"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 196,
+      "type": "LoadAudio",
+      "pos": [
+        1107.8350682934122,
+        2997.8723649689564
+      ],
+      "size": [
+        324,
+        211.328125
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": [
+            305
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.57",
+        "Node name for S&R": "LoadAudio"
+      },
+      "widgets_values": [
+        "五条悟英文配音 [vocals].mp3",
+        null,
+        null
+      ]
+    },
+    {
+      "id": 211,
+      "type": "IndexTTS2EmotionAudioNode",
+      "pos": [
+        1100.3794040344562,
+        2355.633291292531
+      ],
+      "size": [
+        480,
+        609.328125
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "reference_audio",
+          "type": "AUDIO",
+          "link": 304
+        },
+        {
+          "name": "cache_control",
+          "shape": 7,
+          "type": "DICT",
+          "link": null
+        },
+        {
+          "name": "emo_ref_audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": 305
+        }
+      ],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": [
+            306
+          ]
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "subtitle",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "aux_id": "chenpipi0807/ComfyUI-Index-TTS",
+        "ver": "9f1685ac0db7faa565efd5122a5db747502d142d",
+        "Node name for S&R": "IndexTTS2EmotionAudioNode"
+      },
+      "widgets_values": [
+        "Hello, this is IndexTTS 2.他的完美程度接近85%。版本1，版本2，版本3在4090机器上都可以正确工作",
+        "Auto",
+        "on",
+        0.8,
+        0.9,
+        30,
+        3,
+        10,
+        0,
+        1815,
+        120,
+        3137964940,
+        "randomize",
+        0.5
+      ]
+    },
+    {
+      "id": 197,
+      "type": "SaveAudio",
+      "pos": [
+        1124.5525241592954,
+        2126.826764737666
+      ],
+      "size": [
+        401.125,
+        164.375
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 306
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.57",
+        "Node name for S&R": "SaveAudio"
+      },
+      "widgets_values": [
+        "audio/ComfyUI"
+      ]
+    },
+    {
+      "id": 212,
+      "type": "IndexTTS2EmotionTextNode",
+      "pos": [
+        1648.397405553803,
+        2366.919188706151
+      ],
+      "size": [
+        480,
+        651.328125
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "reference_audio",
+          "type": "AUDIO",
+          "link": 307
+        },
+        {
+          "name": "cache_control",
+          "shape": 7,
+          "type": "DICT",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": [
+            309
+          ]
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "subtitle",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "aux_id": "chenpipi0807/ComfyUI-Index-TTS",
+        "ver": "9f1685ac0db7faa565efd5122a5db747502d142d",
+        "Node name for S&R": "IndexTTS2EmotionTextNode"
+      },
+      "widgets_values": [
+        "Hello, this is IndexTTS 2.他的完美程度接近85%。版本1，版本2，版本3在4090机器上都可以正确工作",
+        "Auto",
+        "on",
+        0.8,
+        0.9,
+        30,
+        3,
+        10,
+        0,
+        1815,
+        120,
+        2958991727,
+        "randomize",
+        "有一点生气"
+      ]
+    },
+    {
+      "id": 198,
+      "type": "SaveAudio",
+      "pos": [
+        1655.9057578423933,
+        2120.431673723413
+      ],
+      "size": [
+        401.125,
+        164.375
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 309
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.57",
+        "Node name for S&R": "SaveAudio"
+      },
+      "widgets_values": [
+        "audio/ComfyUI"
+      ]
+    },
+    {
+      "id": 214,
+      "type": "IndexTTS2EmotionVectorNode",
+      "pos": [
+        2214.8551612201427,
+        2350.9337936676548
+      ],
+      "size": [
+        480,
+        847.328125
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "reference_audio",
+          "type": "AUDIO",
+          "link": 311
+        },
+        {
+          "name": "cache_control",
+          "shape": 7,
+          "type": "DICT",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": [
+            312
+          ]
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "subtitle",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "aux_id": "chenpipi0807/ComfyUI-Index-TTS",
+        "ver": "9f1685ac0db7faa565efd5122a5db747502d142d",
+        "Node name for S&R": "IndexTTS2EmotionVectorNode"
+      },
+      "widgets_values": [
+        "Hello, this is IndexTTS 2.他的完美程度接近85%。版本1，版本2，版本3在4090机器上都可以正确工作",
+        "Auto",
+        "on",
+        0.8,
+        0.9,
+        30,
+        1,
+        10,
+        0,
+        1815,
+        120,
+        2204149007,
+        "randomize",
+        0,
+        1.4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": 199,
+      "type": "SaveAudio",
+      "pos": [
+        2203.4676461482977,
+        2136.920051964961
+      ],
+      "size": [
+        401.125,
+        164.375
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 312
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.57",
+        "Node name for S&R": "SaveAudio"
+      },
+      "widgets_values": [
+        "audio/ComfyUI"
+      ]
+    },
+    {
+      "id": 169,
+      "type": "SaveAudio",
+      "pos": [
+        597.966566014878,
+        2125.5936968207066
+      ],
+      "size": [
+        401.125,
+        179.328125
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 314
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.57",
+        "Node name for S&R": "SaveAudio"
+      },
+      "widgets_values": [
+        "audio/ComfyUI"
+      ]
+    },
+    {
+      "id": 215,
+      "type": "IndexTTS2BaseNode",
+      "pos": [
+        592.3153180712188,
+        2374.473530796753
+      ],
+      "size": [
+        400,
+        575.328125
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "reference_audio",
+          "type": "AUDIO",
+          "link": 313
+        },
+        {
+          "name": "cache_control",
+          "shape": 7,
+          "type": "DICT",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": [
+            314
+          ]
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "subtitle",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "aux_id": "chenpipi0807/ComfyUI-Index-TTS",
+        "ver": "59b91cc1ee75791e7bb28a0294d0f02aab85cb5d",
+        "Node name for S&R": "IndexTTS2BaseNode"
+      },
+      "widgets_values": [
+        "Hello, this is IndexTTS 2.他的完美程度接近85%。版本1，版本2，版本3在4090机器上都可以正确工作",
+        "Auto",
+        "on",
+        0.8,
+        0.9,
+        30,
+        3,
+        10,
+        0,
+        1815,
+        120,
+        1436802252,
+        "randomize"
+      ]
+    },
+    {
+      "id": 216,
+      "type": "IndexTTS2ProNode",
+      "pos": [
+        1171.6894834695372,
+        3445.034598648958
+      ],
+      "size": [
+        400,
+        729.328125
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "narrator_audio",
+          "type": "AUDIO",
+          "link": 321
+        },
+        {
+          "name": "character1_audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": 316
+        },
+        {
+          "name": "character2_audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "name": "character3_audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "name": "character4_audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "name": "character5_audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "name": "emotion_audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "name": "cache_control",
+          "shape": 7,
+          "type": "DICT",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": [
+            318
+          ]
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "Subtitle",
+          "type": "STRING",
+          "links": [
+            319
+          ]
+        },
+        {
+          "name": "SimplifiedSubtitle",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "aux_id": "chenpipi0807/ComfyUI-Index-TTS",
+        "ver": "59b91cc1ee75791e7bb28a0294d0f02aab85cb5d",
+        "Node name for S&R": "IndexTTS2ProNode"
+      },
+      "widgets_values": [
+        "<Narrator>这是一段旁白文本。<Character1>你好，我是角色1。<Narrator>他说道。",
+        "Auto",
+        0.8,
+        "on",
+        0.8,
+        0.9,
+        30,
+        3,
+        10,
+        0,
+        1815,
+        120,
+        3300100132,
+        "randomize"
+      ]
+    },
+    {
+      "id": 217,
+      "type": "LoadAudio",
+      "pos": [
+        695.5020829030209,
+        3683.7141893363328
+      ],
+      "size": [
+        324,
+        211.328125
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": [
+            316
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.57",
+        "Node name for S&R": "LoadAudio"
+      },
+      "widgets_values": [
+        "S3_01.wav",
+        null,
+        null
+      ]
+    },
+    {
+      "id": 218,
+      "type": "SaveAudio",
+      "pos": [
+        1640.4127762336975,
+        3454.633729176228
+      ],
+      "size": [
+        401.125,
+        179.328125
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 318
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.57",
+        "Node name for S&R": "SaveAudio"
+      },
+      "widgets_values": [
+        "audio/ComfyUI"
+      ]
+    },
+    {
+      "id": 219,
+      "type": "easy showAnything",
+      "pos": [
+        1654.3111169812764,
+        3694.5575873558105
+      ],
+      "size": [
+        444.46875,
+        426.0625
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 319
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "17b163e234024384aa32675d8a52e1cc30dac7f6",
+        "Node name for S&R": "easy showAnything"
+      },
+      "widgets_values": [
+        "[\n  {\n    \"id\": \"Narrator\",\n    \"字幕\": \"这是一段旁白文本。\",\n    \"start\": \"0:00.000\",\n    \"end\": \"0:02.147\"\n  },\n  {\n    \"id\": \"Character1\",\n    \"字幕\": \"你好，我是角色1。\",\n    \"start\": \"0:02.147\",\n    \"end\": \"0:04.179\"\n  },\n  {\n    \"id\": \"Narrator\",\n    \"字幕\": \"他说道。\",\n    \"start\": \"0:04.179\",\n    \"end\": \"0:05.154\"\n  }\n]"
+      ]
+    },
+    {
+      "id": 222,
+      "type": "LoadAudio",
+      "pos": [
+        692.6960247953623,
+        3439.671187194517
+      ],
+      "size": [
+        324,
+        211.328125
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": [
+            321
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.57",
+        "Node name for S&R": "LoadAudio"
+      },
+      "widgets_values": [
+        "volume_1.3.mp3",
+        null,
+        null
+      ]
+    }
+  ],
+  "links": [
+    [
+      304,
+      168,
+      0,
+      211,
+      0,
+      "AUDIO"
+    ],
+    [
+      305,
+      196,
+      0,
+      211,
+      2,
+      "AUDIO"
+    ],
+    [
+      306,
+      211,
+      0,
+      197,
+      0,
+      "AUDIO"
+    ],
+    [
+      307,
+      168,
+      0,
+      212,
+      0,
+      "AUDIO"
+    ],
+    [
+      309,
+      212,
+      0,
+      198,
+      0,
+      "AUDIO"
+    ],
+    [
+      311,
+      168,
+      0,
+      214,
+      0,
+      "AUDIO"
+    ],
+    [
+      312,
+      214,
+      0,
+      199,
+      0,
+      "AUDIO"
+    ],
+    [
+      313,
+      168,
+      0,
+      215,
+      0,
+      "AUDIO"
+    ],
+    [
+      314,
+      215,
+      0,
+      169,
+      0,
+      "AUDIO"
+    ],
+    [
+      316,
+      217,
+      0,
+      216,
+      1,
+      "AUDIO"
+    ],
+    [
+      318,
+      216,
+      0,
+      218,
+      0,
+      "AUDIO"
+    ],
+    [
+      319,
+      216,
+      2,
+      219,
+      0,
+      "STRING"
+    ],
+    [
+      321,
+      222,
+      0,
+      216,
+      0,
+      "AUDIO"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "TTS2读小说",
+      "bounding": [
+        633.6805905083971,
+        3322.9648328717335,
+        1519.5157431523999,
+        882.5485523119919
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.9090909090909091,
+      "offset": [
+        -328.3231495085657,
+        -2825.124044750925
+      ]
+    },
+    "frontendVersion": "1.34.8",
+    "workflowRendererVersion": "Vue",
+    "node_versions": {
+      "comfy-core": "0.3.24"
+    },
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
